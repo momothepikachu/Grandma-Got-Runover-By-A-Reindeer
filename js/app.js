@@ -12,7 +12,7 @@ var Random = function() {
 // Enemies our player must avoid
 var Enemy = function() {
     Random.call(this);
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'images/reindeer.png';
 
 };
 
@@ -36,7 +36,7 @@ Enemy.prototype.render = function() {
 // Detect collisions with the player
 Enemy.prototype.checkCollisions = function() {
     if (this.x<player.x && (this.x+50.5)>player.x && this.y===player.y) {
-        alert('Oops, collision!');
+        alert('😱 Oops, Grandma got run over by a reindeer!');
         window.Resources.restart();
     }
 };
@@ -65,7 +65,7 @@ var allEnemies = [new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(
 
 //The player class
 var Player = function() {
-    this.you = 'images/char-boy.png';
+    this.you = 'images/grandma.png';
     this.x = 505/2-50;
     this.y = 312;
 };

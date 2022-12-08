@@ -177,8 +177,8 @@ var Engine = (function(global) {
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
-        'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/reindeer.png',
+        'images/grandma.png'
     ]);
     window.Resources.onReady(init);
 
