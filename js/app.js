@@ -6,7 +6,7 @@ var Random = function() {
     this.randomSpeed = Math.floor((Math.random()+0.5)*3)*6; //Enemy runs at random speed
     this.randomDistance = Math.floor((Math.random()+1)*6); // Enemy starts from random starting point
     this.x = -101*this.randomDistance;
-    this.y = 63 + this.randomRow*83;    
+    this.y = 113 + this.randomRow*83;    
 };
 
 // Enemies our player must avoid
@@ -67,7 +67,7 @@ var allEnemies = [new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(
 var Player = function() {
     this.you = 'images/grandma.png';
     this.x = 505/2-50;
-    this.y = 312;
+    this.y = 362;
 };
 
 //Update player on the screen
@@ -101,7 +101,7 @@ Player.prototype.handleInput = function(key) {
             break;
         case 'up':
             this.y -= 83;
-            if (this.y===-20) { //if player reach river, return to the starter position
+            if (this.y===30) { //if player reach river, return to the starter position
                 setTimeout(function(){
                     alert('You made it!!');
                     window.Resources.restart();
@@ -109,7 +109,7 @@ Player.prototype.handleInput = function(key) {
             }            
             break;
         case 'down':
-            if (this.y<312) { //player can't move out from the bottom of the screen
+            if (this.y<362) { //player can't move out from the bottom of the screen
                 this.y += 83;
             }
             break;

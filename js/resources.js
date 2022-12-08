@@ -104,7 +104,7 @@
      */
 
     function restart() {
-        player.y = 312;
+        player.y = 362;
         player.x = 202.5;
     }
 
