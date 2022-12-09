@@ -1,3 +1,41 @@
 body {
     text-align: center;
 }
+.button {
+    visibility: hidden;
+}
+/* On screens that are 992px or less, zoom in on the canvas */
+@media screen and (max-width: 992px) {
+    canvas {
+        zoom: 1.5;
+    }
+    .button {
+        visibility: visible;
+    }
+}
+.button {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    font-size: 34px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+  
+.button:hover {background-color: #3e8e41}
+  
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+/* Disable double-tap "zoom" option in browser on touch devices  */
+.disable-dbl-tap-zoom {
+    touch-action: manipulation;
+}

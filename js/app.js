@@ -46,40 +46,12 @@ Enemy.prototype.checkCollisions = function() {
 var allEnemies = [new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()];
 
 
-// //Generate an array of enemies
-// var generator = function() {
-//     // allEnemies.push(new Enemy());
-//     // setInterval(function() {
-//     //     allEnemies.push(new Enemy());
-//     // }, (Math.random()+0.2)*1000);
-//     allEnemies.push(new Enemy());
-//     let times = 0;
-//     let interval = setInterval(function() {
-//         times += 1;
-//         if (times === 5) {
-//             clearInterval(interval);
-//         }
-//         allEnemies.push(new Enemy());
-//         }, Math.random()*2000);
-// };
-
 //The player class
 var Player = function() {
     this.you = 'images/grandma.png';
     this.x = 505/2-50;
     this.y = 362;
 };
-
-//Update player on the screen
-// Player.prototype.update = function() {
-//     if (this.y===-20) { //if player reach river, return to the starter position
-//         alert('You made it!!');
-//         window.Resources.restart();
-//     }
-//     this.y += (this.down-this.up)*83;
-//     this.x += (this.right-this.left)*101;
-//     this.down=this.up=this.left=this.right= 0;
-// };
 
 //Draw player on the screen
 Player.prototype.render = function() {
@@ -122,7 +94,6 @@ var player = new Player();
 
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -133,3 +104,10 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+document.addEventListener('click', function(e){
+    const isButton = e.target.nodeName;
+    if(isButton){
+        player.handleInput(e.target.dataset.key);
+    }
+})
